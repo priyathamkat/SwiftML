@@ -95,4 +95,16 @@ extension Tensor {
     public static func * (left: Float, right: Tensor) -> Tensor {
         return right * left
     }
+    
+    public static func / (left: Tensor, right: Float) -> Tensor {
+        let shape = left.shape
+        let data: [Float] = vDSP.divide(left.data, right)
+        return Tensor(ofShape: shape, withData: data)
+    }
+    
+    public static func / (left: Float, right: Tensor) -> Tensor {
+        let shape = right.shape
+        let data: [Float] = vDSP.divide(left, right.data)
+        return Tensor(ofShape: shape, withData: data)
+    }
 }

@@ -14,5 +14,6 @@ final class SwiftMLTests: XCTestCase {
         XCTAssertEqual((zeros - 1), -ones)
         XCTAssertEqual((1 - zeros), ones)
         XCTAssertEqual(2 * ones, zeros + 2)
+        XCTAssertEqual(ones / 2, zeros + 0.5)
     }
 }
