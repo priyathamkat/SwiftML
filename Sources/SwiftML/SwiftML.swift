@@ -51,3 +51,9 @@ public class Tensor {
         self.init(ofShape: shape, withData: data)
     }
 }
+
+extension Tensor: Equatable {
+    public static func == (lhs: Tensor, rhs: Tensor) -> Bool {
+        return lhs.shape == rhs.shape && lhs.data == rhs.data
+    }
+}
