@@ -14,6 +14,12 @@ public class TensorShape {
     }
 }
 
+extension TensorShape: Equatable {
+    public static func == (lhs: TensorShape, rhs: TensorShape) -> Bool {
+        return lhs.shape == rhs.shape
+    }
+}
+
 public class Tensor {
     public let shape: TensorShape
     public var size: Int {
