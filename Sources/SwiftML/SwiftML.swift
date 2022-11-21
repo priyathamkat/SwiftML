@@ -41,7 +41,7 @@ private func generateRandom(d: Int, n: Int) -> [Float] {
     return data
 }
 
-public class Tensor {
+public class Tensor: CustomStringConvertible {
     public let shape: TensorShape
     public var size: Int {
         self.shape.size
@@ -102,6 +102,10 @@ public class Tensor {
         }
         
         self.init(ofShape: shape, withData: data)
+    }
+    
+    public var description: String {
+        return String(describing: self.data)
     }
 }
 
