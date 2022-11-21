@@ -29,7 +29,7 @@ public class Tensor: CustomStringConvertible {
     
     public var data: [Float]
     
-    public init(ofShape shape: TensorShape, withData data: [Float]) {
+    internal init(ofShape shape: TensorShape, withData data: [Float]) {
         precondition(shape.size == data.count, "Size of data doesn't match the size inferred from shape")
         self.shape = shape
         self.data = data
