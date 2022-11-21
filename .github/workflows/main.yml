@@ -1,0 +1,18 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: Swift
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build_docs:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build SwiftML Documentation
+      run: swift package --allow-writing-to-directory docs generate-documentation --target swiftml --disable-indexing --transform-for-static-hosting --hosting-base-path SwiftML --output-path docs
